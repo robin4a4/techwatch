@@ -37,6 +37,7 @@ module.exports = {
       borderRadius: {
         DEFAULT: "4px",
         md: "8px",
+        xl: "14px",
         full: "9999px",
       },
       animation: {

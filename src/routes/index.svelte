@@ -1,2 +1,11 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+  import Header from "../components/Header.svelte";
+  import LinkForm from "../components/LinkForm.svelte";
+  import Link from "../components/Link.svelte";
+</script>
+
+<div class="mx-auto w-[760px] flex flex-col gap-32">
+  <Header />
+  <LinkForm />
+  <Link />
+</div>
