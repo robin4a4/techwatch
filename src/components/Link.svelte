@@ -1,5 +1,6 @@
 <script>
   import Pill from "./Pill.svelte";
+  import { PillType } from "../types/PillType";
 </script>
 
 <div class="flex flex-col w-full border border-gray-300 rounded-md">
@@ -11,14 +12,7 @@
         </span>
       </p>
     </div>
-    <div class="flex items-center gap-8">
-      <p>
-        <span class="text-300">by</span><span class="text-500">john@doe.fr</span
-        >
-      </p>
-      <span class="block w-8 h-8 bg-gray-400 rounded-full" />
-      <Pill text="Design" />
-    </div>
+    <Pill value={PillType.design} />
   </div>
   <div class="p-16 text-gray-500 border-t border-gray-300">
     Lorem ipsum dolor sit amet. Et labore voluptates hic repellendus repellat 33

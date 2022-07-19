@@ -1,5 +1,6 @@
-<script>
+<script lang="ts">
   let src = "images/colored-arrow.svg";
+  let isFormOpen = false;
 </script>
 
 <section class="p-[6px] rounded-xl gradient w-full">
