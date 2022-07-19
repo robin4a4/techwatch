@@ -10,6 +10,7 @@ module.exports = {
         8: "8px",
         12: "12px",
         16: "16px",
+        20: "20px",
         24: "24px",
         32: "32px",
         40: "40px",
@@ -26,6 +27,7 @@ module.exports = {
       fontSize: {
         8: "8px",
         12: "12px",
+        14: "14px",
         16: "16px",
         24: "24px",
         32: "32px",
