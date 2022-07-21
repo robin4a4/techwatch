@@ -1,7 +1,10 @@
 <script lang="ts">
+  import Pill from "./Pill.svelte";
+  import { PillType } from "../types/PillType";
+
   let src = "images/colored-arrow.svg";
   let isFormOpen = false;
-
+  let pills = Object.keys(PillType) as Array<PillType>;
   const handleFormToggle = () => (isFormOpen = !isFormOpen);
 </script>
 
@@ -70,8 +73,22 @@
         </p>
         <textarea name="description" class="w-ful min-h-[70px] outline-none" />
       </div>
-      <div class="flex flex-col gap-8 border-b border-gray-200 p-16">
+      <div class="flex gap-8 items-center border-b border-gray-200 p-16">
         <span class="font-bold text-gray-900">Category</span>
+        {#each pills as pill}
+          <div>
+            <label>
+              <input
+                type="radio"
+                id={pill}
+                name="category"
+                value={pill}
+                class="sr-only peer"
+              />
+              <Pill type={pill} />
+            </label>
+          </div>
+        {/each}
       </div>
       <div class="bg-gray-100 flex justify-between p-16 rounded-b-md">
         <button type="button" on:click={handleFormToggle}>
