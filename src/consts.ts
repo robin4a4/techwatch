@@ -1,4 +1,4 @@
-import { PillType } from "./types/PillType";
+import { PillType } from "./types";
 
 export const pillData = new Map<
   PillType,

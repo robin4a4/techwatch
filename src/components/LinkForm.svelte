@@ -1,6 +1,6 @@
 <script lang="ts">
   import Pill from "./Pill.svelte";
-  import { PillType } from "../types/PillType";
+  import { PillType } from "../types";
 
   let src = "images/colored-arrow.svg";
   let isFormOpen = false;
@@ -20,7 +20,8 @@
     </button>
   {:else}
     <form
-      on:submit={handleFormToggle}
+      method="post"
+      action="./"
       class="flex flex-col w-full bg-white rounded-md"
     >
       <div class="flex border-b border-gray-200">
@@ -59,8 +60,8 @@
             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
           </svg>
           <input
-            type="text"
-            name="link"
+            type="email"
+            name="email"
             placeholder="john@doe.com"
             class="py-16 px-8 w-full outline-none rounded-tr-md"
           />
@@ -96,7 +97,6 @@
         </button>
         <button
           type="submit"
-          on:click={handleFormToggle}
           class="rounded gradient px-32 py-16 font-bold text-16 text-white"
         >
           Add

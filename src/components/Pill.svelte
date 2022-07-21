@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PillType } from "../types/PillType";
+  import type { PillType } from "../types";
   import { pillData } from "../consts";
 
   export let type: PillType;

@@ -1,6 +1,6 @@
 <script>
   import Pill from "./Pill.svelte";
-  import { PillType } from "../types/PillType";
+  import { PillType } from "../types";
 </script>
 
 <div class="flex flex-col w-full border border-gray-300 rounded-md">

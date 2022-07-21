@@ -1,21 +1,9 @@
 import { PrismaClient } from "@prisma/client";
-
-type Category = {
-  id: number;
-  name: string;
-};
-
-type Link = {
-  id: number;
-  link: string;
-  description?: string;
-  email: string;
-  category: Category;
-};
+import type { Link } from "../types";
 
 const prisma = new PrismaClient();
 
-export async function api(method: string, data: Link) {
+export async function api(method: string, data?: Link) {
   let body = {};
   let status = 500;
   switch (method.toUpperCase()) {
@@ -24,6 +12,7 @@ export async function api(method: string, data: Link) {
       status = 200;
       break;
     case "POST":
+      if (!data) break;
       body = await prisma.link.create({
         data: {
           link: data.link,
