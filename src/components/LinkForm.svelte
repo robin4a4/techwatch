@@ -1,10 +1,12 @@
 <script lang="ts">
+  import type { Category } from "@prisma/client";
   import Pill from "./Pill.svelte";
-  import { PillType } from "../types";
+
+  export let categories: Category[];
 
   let src = "images/colored-arrow.svg";
   let isFormOpen = false;
-  let pills = Object.keys(PillType) as Array<PillType>;
+
   const handleFormToggle = () => (isFormOpen = !isFormOpen);
 </script>
 
@@ -41,10 +43,11 @@
             />
           </svg>
           <input
-            type="text"
+            type="url"
             name="link"
             placeholder="https://css-tricks.com/"
             class="py-16 px-8 w-full outline-none"
+            required
           />
         </div>
         <div class="flex gap-8 items-center flex-1 pl-16">
@@ -64,6 +67,7 @@
             name="email"
             placeholder="john@doe.com"
             class="py-16 px-8 w-full outline-none rounded-tr-md"
+            required
           />
         </div>
       </div>
@@ -76,17 +80,18 @@
       </div>
       <div class="flex gap-8 items-center border-b border-gray-200 p-16">
         <span class="font-bold text-gray-900">Category</span>
-        {#each pills as pill}
+        {#each categories as category}
           <div>
             <label>
               <input
                 type="radio"
-                id={pill}
-                name="category"
-                value={pill}
+                id={category.id.toString()}
+                name="categoryId"
+                value={category.id.toString()}
                 class="sr-only peer"
+                required
               />
-              <Pill type={pill} />
+              <Pill {category} />
             </label>
           </div>
         {/each}

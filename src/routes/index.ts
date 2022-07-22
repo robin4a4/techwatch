@@ -1,5 +1,5 @@
-import type { Link } from "src/types";
 import { api } from "./_api";
+import type { Link, Category } from "@prisma/client";
 import type { RequestHandler } from "./__types";
 
 export const get: RequestHandler = async () => {
@@ -8,6 +8,7 @@ export const get: RequestHandler = async () => {
     return {
       body: {
         links: [],
+        categories: [],
       },
     };
   }
@@ -19,7 +20,8 @@ export const get: RequestHandler = async () => {
 
 export const post: RequestHandler = async ({ request }) => {
   const form = await request.formData();
-  const formAsObj = Object.fromEntries(form) as Link;
-  await api("POST", formAsObj);
+  const formAsObj = Object.fromEntries(form);
+  formAsObj.categoryId = parseInt(formAsObj.categoryId, 10);
+  await api("POST", formAsObj as Link);
   return {};
 };

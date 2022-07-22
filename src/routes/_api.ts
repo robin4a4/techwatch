@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import type { Link } from "../types";
+import type { Link } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -8,7 +8,10 @@ export async function api(method: string, data?: Link) {
   let status = 500;
   switch (method.toUpperCase()) {
     case "GET":
-      body = await prisma.link.findMany();
+      body = {
+        links: await prisma.link.findMany(),
+        categories: await prisma.category.findMany(),
+      };
       status = 200;
       break;
     case "POST":
@@ -18,7 +21,7 @@ export async function api(method: string, data?: Link) {
           link: data.link,
           email: data.email,
           description: data.description || "",
-          category: data.category,
+          categoryId: data.categoryId,
         },
       });
       status = 201;

@@ -1,14 +1,14 @@
 <script lang="ts">
-  import type { PillType } from "../types";
+  import type { Category } from "@prisma/client";
   import { pillData } from "../consts";
 
-  export let type: PillType;
+  export let category: Category;
 </script>
 
 <div
   class={`px-16 py-8 cursor-pointer font-bold rounded-full border border-gray-300 peer-focus-visible:outline peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600 ${
-    pillData.get(type)?.colorClasses
+    pillData.get(category.name)?.colorClasses
   } peer-checked:text-white`}
 >
-  {pillData.get(type)?.text}
+  {pillData.get(category.name)?.text}
 </div>
