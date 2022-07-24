@@ -3,7 +3,7 @@
   import { pillData } from "../consts";
 
   export let category: Category;
-  export let noButton: boolean = false;
+  export let noButton = false;
 </script>
 
 <div

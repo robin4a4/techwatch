@@ -9,32 +9,40 @@ export async function api(method: string, data?: Link) {
   switch (method.toUpperCase()) {
     case "GET":
       body = {
-        links: await prisma.link.findMany({
-          include: {
+        links: [
+          {
+            id: 1,
+            link: "test",
+            email: "test",
+            description: "test",
+            categoryId: 1,
             category: {
-              select: {
-                id: true,
-                name: true,
-              },
+              id: 1,
+              name: "python",
             },
           },
-        }),
-        categories: await prisma.category.findMany(),
+        ],
+        categories: [
+          {
+            id: 1,
+            name: "python",
+          },
+        ],
       };
       status = 200;
       break;
-    case "POST":
-      if (!data) break;
-      body = await prisma.link.create({
-        data: {
-          link: data.link,
-          email: data.email,
-          description: data.description || "",
-          categoryId: data.categoryId,
-        },
-      });
-      status = 201;
-      break;
+    // case "POST":
+    //   if (!data) break;
+    //   body = await prisma.link.create({
+    //     data: {
+    //       link: data.link,
+    //       email: data.email,
+    //       description: data.description || "",
+    //       categoryId: data.categoryId,
+    //     },
+    //   });
+    //   status = 201;
+    //   break;
   }
   return {
     body,

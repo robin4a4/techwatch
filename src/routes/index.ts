@@ -20,7 +20,7 @@ export const get: RequestHandler = async () => {
 
 export const post: RequestHandler = async ({ request }) => {
   const form = await request.formData();
-  const formAsObj = Object.fromEntries(form as any); // doing that because dom.iterable does not work in tsconfig.json
+  const formAsObj = Object.fromEntries(form as any); // doing that because dom.iterable does not work in tsconfig.
   formAsObj.categoryId = parseInt(formAsObj.categoryId, 10);
   if (formAsObj.email === "robin4a4@gmail.com")
     await api("POST", formAsObj as Link);
