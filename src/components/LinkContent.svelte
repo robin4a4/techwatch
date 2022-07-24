@@ -32,7 +32,7 @@
         </svg>
       </a>
     </div>
-    <Pill category={link.category} />
+    <Pill category={link.category} noButton />
   </div>
   {#if link.description}
     <div

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Category } from "@prisma/client";
-  import Pill from "./Pill.svelte";
+  import PillRow from "./PillRow.svelte";
 
   export let categories: Category[];
 
@@ -15,7 +15,7 @@
     <button
       on:click={handleFormToggle}
       type="button"
-      class="flex items-center justify-between w-full h-64 px-16 font-bold bg-white dark:bg-black rounded-md"
+      class="flex items-center justify-between w-full h-64 px-16 font-bold bg-white dark:bg-black dark:text-gray-300 rounded-md"
     >
       Add link
       <img {src} alt="colored arrow down" />
@@ -93,21 +93,7 @@
         <span class="font-bold text-gray-900 dark:text-gray-300 duration-200"
           >Category</span
         >
-        {#each categories as category}
-          <div>
-            <label>
-              <input
-                type="radio"
-                id={category.id.toString()}
-                name="categoryId"
-                value={category.id.toString()}
-                class="sr-only peer"
-                required
-              />
-              <Pill {category} />
-            </label>
-          </div>
-        {/each}
+        <PillRow {categories} />
       </div>
       <div
         class="bg-gray-100 dark:bg-gray-darker duration-200 flex justify-between p-16 rounded-b-md"
