@@ -22,11 +22,11 @@
   }
 </script>
 
-<div class="mx-auto w-[760px] flex flex-col gap-32 px-16">
+<div class="mx-auto w-full md:w-[760px] flex flex-col gap-32 px-16">
   <Header />
   <LinkForm {categories} />
 
-  <div class="flex items-center justify-between">
+  <div class="flex flex-col md:flex-row md:items-center justify-between">
     <span
       class="font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-32"
       >Link</span

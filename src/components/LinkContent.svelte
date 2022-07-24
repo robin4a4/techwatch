@@ -8,7 +8,7 @@
 <div
   class="flex flex-col w-full border border-gray-300 dark:border-gray-dark duration-200 rounded-md"
 >
-  <div class="flex items-center justify-between w-full p-16">
+  <div class="flex items-center justify-between w-full p-8 md:p-16">
     <div class="flex items-center gap-8 font-bold max-w-[70%]">
       <a href={link.link} class="flex items-center max-w-[100%]">
         <span class="text-gray-300 dark:text-gray-600 duration-200"
@@ -36,7 +36,7 @@
   </div>
   {#if link.description}
     <div
-      class="p-16 text-gray-500 border-t border-gray-300 dark:border-gray-dark duration-200"
+      class="p-8 md:p-16 text-gray-500 border-t border-gray-300 dark:border-gray-dark duration-200"
     >
       {link.description}
     </div>

@@ -7,7 +7,7 @@
 </script>
 
 <div
-  class={`px-16 py-8 ${
+  class={`px-12 md:px-16 py-8 text-12 md:text-16 ${
     !noButton ? "cursor-pointer" : ""
   } font-bold rounded-full border border-gray-300 dark:border-gray-dark duration-200 peer-focus-visible:outline peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600 ${
     pillData.get(category.name)?.colorClasses

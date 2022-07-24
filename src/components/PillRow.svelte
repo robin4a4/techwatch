@@ -5,7 +5,7 @@
   export let categories: Category[];
 </script>
 
-<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 md:gap-8">
   {#each categories as category}
     <label>
       <input

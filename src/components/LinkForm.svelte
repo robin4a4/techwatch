@@ -27,10 +27,10 @@
       class="flex flex-col w-full bg-white dark:bg-black duration-200 rounded-md"
     >
       <div
-        class="flex border-b border-gray-200 dark:border-gray-dark duration-200"
+        class="flex flex-col md:flex-row border-b border-gray-200 dark:border-gray-dark duration-200"
       >
         <div
-          class="flex flex-1 gap-8 items-center border-r border-gray-200 dark:border-gray-dark duration-200 pl-16"
+          class="flex flex-1 gap-8 items-center border-b border-gray-200 md:border-b-0 border-r border-gray-200 dark:border-gray-dark duration-200 pl-16"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@
         />
       </div>
       <div
-        class="flex gap-8 items-center border-b border-gray-200 dark:border-gray-dark duration-200 p-16"
+        class="flex flex-col md:flex-row gap-8 md:items-center border-b border-gray-200 dark:border-gray-dark duration-200 p-16"
       >
         <span class="font-bold text-gray-900 dark:text-gray-300 duration-200"
           >Category</span
