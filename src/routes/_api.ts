@@ -1,6 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import type { Link } from "@prisma/client";
 
+const prisma = new PrismaClient();
+
 export async function api(method: string, data?: Link) {
   let body = {};
   let status = 500;
