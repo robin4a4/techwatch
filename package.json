@@ -34,6 +34,5 @@
   "dependencies": {
     "@prisma/client": "^4.0.0",
     "svelte-themes": "^0.0.98"
-  },
-
+  }
 }
