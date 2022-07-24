@@ -35,7 +35,8 @@
   "type": "module",
   "dependencies": {
     "@prisma/client": "^4.0.0",
-    "commitizen": "^4.2.4"
+    "commitizen": "^4.2.4",
+    "svelte-themes": "^0.0.98"
   },
   "config": {
     "commitizen": {

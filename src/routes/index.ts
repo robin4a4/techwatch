@@ -22,6 +22,7 @@ export const post: RequestHandler = async ({ request }) => {
   const form = await request.formData();
   const formAsObj = Object.fromEntries(form);
   formAsObj.categoryId = parseInt(formAsObj.categoryId, 10);
-  await api("POST", formAsObj as Link);
+  if (formAsObj.email === "robin4a4@gmail.com")
+    await api("POST", formAsObj as Link);
   return {};
 };

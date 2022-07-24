@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', '[data-theme="dark"]'],
   content: ["./src/**/*.{js,jsx,ts,tsx,svelte,html}"],
   theme: {
     extend: {
+      colors: {
+        'gray-dark': '#333',
+        'gray-darker': '#151515'
+      },
       spacing: {
         1: "1px",
         2: "2px",
