@@ -2,7 +2,7 @@ import { api } from "./_api";
 import type { Link } from "@prisma/client";
 import type { RequestHandler } from "./__types";
 
-export const get: RequestHandler = async () => {
+export const GET: RequestHandler = async () => {
   const response = await api("GET");
   if (response.status === 404) {
     return {
@@ -18,7 +18,7 @@ export const get: RequestHandler = async () => {
   };
 };
 
-export const post: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request }) => {
   const form = await request.formData();
   const formAsObj = Object.fromEntries(form as any); // doing that because dom.iterable does not work in tsconfig.
   formAsObj.categoryId = parseInt(formAsObj.categoryId, 10);
