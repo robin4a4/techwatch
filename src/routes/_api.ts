@@ -10,6 +10,11 @@ export async function api(method: string, data?: Link) {
     case "GET":
       body = {
         links: await prisma.link.findMany({
+          orderBy: [
+            {
+              id: 'desc',
+            }
+          ],
           include: {
             category: {
               select: {

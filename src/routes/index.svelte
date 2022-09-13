@@ -22,7 +22,7 @@
   }
 </script>
 
-<div class="mx-auto w-full md:w-[760px] flex flex-col gap-32 px-16">
+<div class="mx-auto w-full md:w-[760px] flex flex-col gap-32 px-16 pb-32">
   <Header />
   <LinkForm {categories} />
 

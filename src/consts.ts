@@ -5,7 +5,7 @@ export const pillData = new Map<string, { text: string; colorClasses: string }>(
       {
         text: "Design",
         colorClasses:
-          "text-blue-600 peer-checked:bg-blue-600 peer-checked:border-blue-600",
+          "text-blue-600 dark:text-blue-500 peer-checked:bg-blue-600 peer-checked:border-blue-600",
       },
     ],
     [
@@ -13,7 +13,7 @@ export const pillData = new Map<string, { text: string; colorClasses: string }>(
       {
         text: "Javascript",
         colorClasses:
-          "text-red-600 peer-checked:bg-red-600 peer-checked:border-red-600",
+          "text-red-600 dark:text-red-500 peer-checked:bg-red-600 peer-checked:border-red-600",
       },
     ],
     [
@@ -21,7 +21,7 @@ export const pillData = new Map<string, { text: string; colorClasses: string }>(
       {
         text: "Python",
         colorClasses:
-          "text-orange-600 peer-checked:bg-orange-600 peer-checked:border-orange-600",
+          "text-orange-600 dark:text-orange-500 peer-checked:bg-orange-600 peer-checked:border-orange-600",
       },
     ],
     [
@@ -29,7 +29,7 @@ export const pillData = new Map<string, { text: string; colorClasses: string }>(
       {
         text: "CSS",
         colorClasses:
-          "text-purple-600 peer-checked:bg-purple-600 peer-checked:border-purple-600",
+          "text-purple-600 dark:text-purple-500 peer-checked:bg-purple-600 peer-checked:border-purple-600",
       },
     ],
   ]

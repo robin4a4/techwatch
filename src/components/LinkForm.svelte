@@ -52,26 +52,6 @@
             required
           />
         </div>
-        <div class="flex gap-8 items-center flex-1 pl-16">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-20 w-20 text-gray-900 dark:text-gray-300 duration-200"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path
-              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
-            />
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-          </svg>
-          <input
-            type="email"
-            name="email"
-            placeholder="john@doe.com"
-            class="py-16 px-8 w-full outline-none rounded-tr-md bg-transparent dark:text-gray-300 duration-200"
-            required
-          />
-        </div>
       </div>
       <div
         class="flex flex-col gap-8 border-b border-gray-200 dark:border-gray-dark duration-200 p-16"

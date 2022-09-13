@@ -11,10 +11,7 @@
   <div class="flex items-center justify-between w-full p-8 md:p-16">
     <div class="flex items-center gap-8 font-bold max-w-[70%]">
       <a href={link.link} class="flex items-center max-w-[100%]">
-        <span class="text-gray-300 dark:text-gray-600 duration-200"
-          >https://</span
-        >
-        <span class="text-blue-600 truncate block">
+        <span class="text-blue-600 dark:text-blue-500 truncate block">
           {link.link.replace(/https:\/\/|http:\/\//gi, "")}
         </span>
         <svg
