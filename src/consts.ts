@@ -32,5 +32,13 @@ export const pillData = new Map<string, { text: string; colorClasses: string }>(
           "text-purple-600 dark:text-purple-500 peer-checked:bg-purple-600 peer-checked:border-purple-600",
       },
     ],
+    [
+      "computing",
+      {
+        text: "Computing",
+        colorClasses:
+          "text-green-600 dark:text-green-500 peer-checked:bg-green-600 peer-checked:border-green-600",
+      },
+    ],
   ]
 );

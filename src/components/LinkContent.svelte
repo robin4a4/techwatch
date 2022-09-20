@@ -8,7 +8,7 @@
 <div
   class="flex flex-col w-full border border-gray-300 dark:border-gray-dark duration-200 rounded-md"
 >
-  <div class="flex items-center justify-between w-full p-8 md:p-16">
+  <div class="flex items-center justify-between w-full p-8 md:p-16 bg-gray-50 rounded-t-md">
     <div class="flex items-center gap-8 font-bold max-w-[70%]">
       <a href={link.link} class="flex items-center max-w-[100%]">
         <span class="text-blue-600 dark:text-blue-500 truncate block">
@@ -16,7 +16,7 @@
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-20 min-w-[20px] text-gray-300 dark:text-gray-600 duration-200"
+          class="h-20 min-w-[20px] text-gray-400 dark:text-gray-600 duration-200"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
