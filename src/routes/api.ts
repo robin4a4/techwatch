@@ -33,7 +33,7 @@ export async function api(method: string, data?: Link) {
       body = await prisma.link.create({
         data: {
           link: data.link,
-          email: data.email,
+          email: data.email || "",
           description: data.description || "",
           categoryId: data.categoryId,
         },

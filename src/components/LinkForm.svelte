@@ -23,7 +23,7 @@
   {:else}
     <form
       method="post"
-      action="./"
+      action="?/add"
       class="flex flex-col w-full bg-white dark:bg-black duration-200 rounded-md"
     >
       <div

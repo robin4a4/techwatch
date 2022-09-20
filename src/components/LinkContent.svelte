@@ -1,8 +1,11 @@
 <script lang="ts">
-  import type { LinkWithCategory } from "../types";
   import Pill from "./Pill.svelte";
-
-  export let link: LinkWithCategory;
+	import type { Link, Category } from "@prisma/client";
+  interface LinkWithCategory extends Link {
+    category: Category;
+  }
+  export let link: Link;
+  let linkWithCategory = link as LinkWithCategory
 </script>
 
 <div
@@ -29,7 +32,7 @@
         </svg>
       </a>
     </div>
-    <Pill category={link.category} noButton />
+    <Pill category={linkWithCategory.category} noButton />
   </div>
   {#if link.description}
     <div

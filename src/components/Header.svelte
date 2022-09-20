@@ -1,16 +1,14 @@
 <script lang="ts">
-  import themeStore, { setTheme } from "svelte-themes";
 
   let src = "images/logo.svg";
   let srcDark = "images/logo-dark.svg";
 
   let isDarkMode: boolean | undefined;
-  $: isDarkMode = $themeStore.theme === "dark";
 </script>
 
 <section class="flex items-center justify-between w-full h-[100px]">
   <img src={isDarkMode ? srcDark : src} alt="techwatch logo" />
-  <button
+  <!-- <button
     type="button"
     on:click={() => setTheme(isDarkMode ? "light" : "dark")}
     class="grid p-8 bg-gray-200 dark:bg-gray-dark duration-200 rounded-full hover:bg-gray-300 place-content-center"
@@ -33,5 +31,5 @@
         />
       {/if}
     </svg>
-  </button>
+  </button> -->
 </section>
