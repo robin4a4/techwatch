@@ -3,13 +3,18 @@ import type { Link } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function api(method: string, data?: Link) {
+export async function api(method: string, args?: {categoryName?: string, data?: Link}) {
   let body = {};
   let status = 500;
   switch (method.toUpperCase()) {
     case "GET":
       body = {
         links: await prisma.link.findMany({
+          ...(args && args.categoryName && {where: {
+            category: {
+              name: args.categoryName
+            }
+          }}),
           orderBy: [
             {
               id: 'desc',
@@ -29,13 +34,13 @@ export async function api(method: string, data?: Link) {
       status = 200;
       break;
     case "POST":
-      if (!data) break;
+      if (!args || !args.data) break;
       body = await prisma.link.create({
         data: {
-          link: data.link,
-          email: data.email || "",
-          description: data.description || "",
-          categoryId: data.categoryId,
+          link: args.data.link,
+          email: args.data.email || "",
+          description: args.data.description || "",
+          categoryId: args.data.categoryId,
         },
       });
       status = 201;

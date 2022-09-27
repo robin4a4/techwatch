@@ -1,19 +1,17 @@
 <script lang="ts">
   import Pill from "./Pill.svelte";
-	import type { Link, Category } from "@prisma/client";
-  interface LinkWithCategory extends Link {
-    category: Category;
-  }
-  export let link: Link;
-  let linkWithCategory = link as LinkWithCategory
+  import type { LinkWithCategory } from "src/types";
+
+  export let link: LinkWithCategory;
 </script>
 
-<div
-  class="flex flex-col w-full border border-gray-300 dark:border-gray-dark duration-200 rounded-md"
+<a
+  href={link.link}
+  target="blank"
+  class="flex items-start justify-between w-full shadow-md shadow-neutral-200 duration-200 rounded-xl bg-white p-16"
 >
-  <div class="flex items-center justify-between w-full p-8 md:p-16 bg-gray-50 rounded-t-md">
-    <div class="flex items-center gap-8 font-bold max-w-[70%]">
-      <a href={link.link} class="flex items-center max-w-[100%]">
+  <div class="flex flex-col gap-8 justify-between max-w-[60%] md:max-w-[70%]">
+      <div  class="font-bold flex items-center">
         <span class="text-blue-600 dark:text-blue-500 truncate block">
           {link.link.replace(/https:\/\/|http:\/\//gi, "")}
         </span>
@@ -30,15 +28,14 @@
             d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"
           />
         </svg>
-      </a>
-    </div>
-    <Pill category={linkWithCategory.category} noButton />
+      </div>
+      {#if link.description}
+        <div
+          class="text-gray-500 duration-200"
+        >
+          {link.description}
+        </div>
+      {/if}
   </div>
-  {#if link.description}
-    <div
-      class="p-8 md:p-16 text-gray-500 border-t border-gray-300 dark:border-gray-dark duration-200"
-    >
-      {link.description}
-    </div>
-  {/if}
-</div>
+  <Pill category={link.category} noButton />
+</a>

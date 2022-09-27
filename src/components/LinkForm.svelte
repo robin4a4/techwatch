@@ -30,7 +30,7 @@
         class="flex flex-col md:flex-row border-b border-gray-200 dark:border-gray-dark duration-200"
       >
         <div
-          class="flex flex-1 gap-8 items-center border-b border-gray-200 md:border-b-0 border-r border-gray-200 dark:border-gray-dark duration-200 pl-16"
+          class="flex flex-1 gap-8 items-center border-b border-gray-200 md:border-b-0 duration-200 pl-16"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -83,8 +83,13 @@
         </button>
         <button
           type="submit"
-          class="rounded gradient px-32 py-16 font-bold text-16 text-white duration-150 hover:scale-110"
+          class="rounded-md gradient px-32 py-12 font-bold text-16 text-white duration-150 hover:scale-110 flex gap-4 items-center"
         >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-11.25a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z" clip-rule="evenodd" />
+        </svg>
+        
+        
           Add
         </button>
       </div>
