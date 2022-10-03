@@ -8,6 +8,11 @@
     export let data: PageData;
     $: categories = data.categories;
     $: currentCategory = data.currentCategory;
+    let isFormShown = false;
+
+    function handleClick() {
+      isFormShown = !isFormShown;
+    }
 </script>
 
 <svelte:head>
@@ -16,8 +21,10 @@
 </svelte:head>
 
 <div class="mx-auto w-full md:w-[760px] flex flex-col gap-32 px-16 pb-32">
-	<Header />
-	<LinkForm {categories} />
+  <Header />
+	{#if isFormShown}
+    <LinkForm {categories} />
+  {/if}
   
 	<div class="flex flex-col md:flex-row md:items-center justify-between">
 	  <span
@@ -29,6 +36,7 @@
     <div class="flex flex-col gap-24">
         <slot />
     </div>
+    <button class='fixed top-0 right-0 w-24 h-24' on:click={handleClick}></button>
 </div>
   
 

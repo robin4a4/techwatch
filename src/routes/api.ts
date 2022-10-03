@@ -4,13 +4,14 @@ import type { Link } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export async function api(method: string, args?: {categoryName?: string, data?: Link}) {
+  const hasCategory = args && args.categoryName && args.categoryName !== "favicon.ico"
   let body = {};
   let status = 500;
   switch (method.toUpperCase()) {
     case "GET":
       body = {
         links: await prisma.link.findMany({
-          ...(args && args.categoryName && {where: {
+          ...(hasCategory && {where: {
             category: {
               name: args.categoryName
             }
@@ -34,7 +35,7 @@ export async function api(method: string, args?: {categoryName?: string, data?: 
       status = 200;
       break;
     case "POST":
-      if (!args || !args.data) break;
+      if (!args || !args.data || args.data.categoryId > 5 || !args.data.categoryId) break;
       body = await prisma.link.create({
         data: {
           link: args.data.link,

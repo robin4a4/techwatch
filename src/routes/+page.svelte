@@ -5,7 +5,6 @@
 
 	export let data: PageData;
 	$: links = data.links as LinkWithCategory[];
-
 </script>
 
 {#each links as link}
