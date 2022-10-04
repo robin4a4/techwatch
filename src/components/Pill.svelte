@@ -5,6 +5,7 @@
   export let category: Category;
   export let noButton = false;
   export let isChecked = false;
+  export let isEasterEgg = false;
 </script>
 
 <div
@@ -16,5 +17,5 @@
     ${isChecked ? pillData.get(category.name)?.colorCurrent + ' text-white' : ''}
   `}
 >
-  {pillData.get(category.name)?.text}
+  {isEasterEgg ? "vrai bon rap" : pillData.get(category.name)?.text}
 </div>

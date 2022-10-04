@@ -8,7 +8,7 @@
 <a
   href={link.link}
   target="blank"
-  class={`flex ${link.description ? 'items-start' : 'items-center'} justify-between w-full shadow-md shadow-neutral-200 duration-200 rounded-xl bg-white p-16`}
+  class={`flex ${link.description ? 'items-start' : 'items-center'} justify-between w-full shadow-md shadow-neutral-200 duration-200 rounded-xl bg-white p-16 ${link.email === "giovanni@simon.fr" ? "rotate-3 animate-bounce bg-red-200" : ""}`}
 >
   <div class="flex flex-col gap-8 justify-between max-w-[60%] md:max-w-[70%]">
       <div  class="font-bold flex items-center">
@@ -37,5 +37,5 @@
         </div>
       {/if}
   </div>
-  <Pill category={link.category} noButton />
+  <Pill category={link.category} noButton isEasterEgg={link.email === "giovanni@simon.fr"}/>
 </a>
