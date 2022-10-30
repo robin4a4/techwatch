@@ -25,7 +25,6 @@
   {#if isFormShown}
     <LinkForm {categories} />
   {/if}
-  <div class="w-4 h-4 animate-spin animate-ping bg-orange-500 rounded-full" />
   <div class="flex flex-col md:flex-row md:items-center justify-between">
     <span
       class="font-bold italic bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 text-32"

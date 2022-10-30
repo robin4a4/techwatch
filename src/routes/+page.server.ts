@@ -2,8 +2,6 @@ import { api } from "./api";
 import type { Actions } from "./$types";
 import type { Link } from "@prisma/client";
 
-export const prerender = true;
-
 export const actions: Actions = {
   add: async ({ request }) => {
     const form = await request.formData();
