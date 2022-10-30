@@ -3,7 +3,7 @@ import { api } from "./api";
 import type { LayoutServerLoad, Actions } from "./$types";
 import type { Link, Category } from "@prisma/client";
 
-export const ssr = false;
+export const prerender = true;
 
 export const load: LayoutServerLoad = async ({ params }) => {
   const response = await api("GET", { categoryName: params.categoryName });
